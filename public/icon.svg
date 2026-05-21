@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="MagicKey CRM icon">
+  <rect width="512" height="512" rx="96" fill="#18202b"/>
+  <path d="M128 278 256 142l128 136v128a18 18 0 0 1-18 18h-76v-96h-68v96h-76a18 18 0 0 1-18-18V278Z" fill="#f8f5ee"/>
+  <path d="M184 264h144" stroke="#caa357" stroke-width="26" stroke-linecap="round"/>
+  <circle cx="336" cy="264" r="42" fill="none" stroke="#caa357" stroke-width="26"/>
+  <path d="M178 263h-42m42 0v42" stroke="#caa357" stroke-width="26" stroke-linecap="round"/>
+</svg>
