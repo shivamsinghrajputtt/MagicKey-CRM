@@ -2,7 +2,6 @@ import Link from "next/link";
 import { Building2 } from "lucide-react";
 
 import { LoginForm } from "@/features/auth/login-form";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function LoginPage() {
   return (
@@ -14,14 +13,7 @@ export default function LoginPage() {
           </span>
           <span className="text-xl font-bold">MagicKey CRM</span>
         </Link>
-        <Card>
-          <CardHeader>
-            <CardTitle>Sign in to your broker workspace</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <LoginForm />
-          </CardContent>
-        </Card>
+        <LoginForm />
       </div>
     </main>
   );
