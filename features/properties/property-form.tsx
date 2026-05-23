@@ -90,12 +90,12 @@ export function PropertyForm({ property, isPending, onCancel, onSubmit }: Proper
   const values = watch();
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 pb-6">
       <Field label="Property title" error={errors.title?.message}>
         <Input placeholder="Sea-facing 2 BHK Residence" {...register("title")} />
       </Field>
 
-      <div className="grid gap-4 sm:grid-cols-3">
+      <div className="grid grid-cols-3 gap-2 sm:gap-4">
         <Field label="Type" error={errors.type?.message}>
           <Select
             value={values.type}
@@ -149,7 +149,7 @@ export function PropertyForm({ property, isPending, onCancel, onSubmit }: Proper
         </Field>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid grid-cols-2 gap-3 sm:gap-4">
         <Field label="Location" error={errors.location?.message}>
           <Input placeholder="Bandra West" {...register("location")} />
         </Field>
@@ -162,7 +162,7 @@ export function PropertyForm({ property, isPending, onCancel, onSubmit }: Proper
         <Input placeholder="Carter Road, near promenade" {...register("address")} />
       </Field>
 
-      <div className="grid gap-4 sm:grid-cols-3">
+      <div className="grid grid-cols-3 gap-2 sm:gap-4">
         <Field label="BHK" error={errors.bedrooms?.message}>
           <Select
             value={values.bedrooms === null ? "none" : String(values.bedrooms)}
@@ -191,7 +191,7 @@ export function PropertyForm({ property, isPending, onCancel, onSubmit }: Proper
         </Field>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid grid-cols-2 gap-3 sm:gap-4">
         <Field label="Owner name" error={errors.owner_name?.message}>
           <Input placeholder="N. Kapoor" {...register("owner_name")} />
         </Field>
@@ -230,10 +230,10 @@ export function PropertyForm({ property, isPending, onCancel, onSubmit }: Proper
 
 function Field({ label, error, children }: { label: string; error?: string; children: ReactNode }) {
   return (
-    <div className="space-y-2">
-      <Label>{label}</Label>
+    <div className="space-y-1.5 min-w-0">
+      <Label className="text-xs sm:text-sm truncate block">{label}</Label>
       {children}
-      {error ? <p className="text-xs font-medium text-destructive">{error}</p> : null}
+      {error ? <p className="text-[10px] sm:text-xs font-medium text-destructive mt-1 leading-none">{error}</p> : null}
     </div>
   );
 }

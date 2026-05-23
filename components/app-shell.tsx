@@ -1,11 +1,11 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { Building2, Menu, Search } from "lucide-react";
+import { Building2, Search } from "lucide-react";
 
 import { BottomNav } from "@/components/bottom-nav";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { Button } from "@/components/ui/button";
 import { GlobalAddButton } from "@/components/global-add-button";
+import { MobileMenu } from "@/components/mobile-menu";
 
 export function AppShell({ children }: { children: ReactNode }) {
   return (
@@ -29,9 +29,7 @@ export function AppShell({ children }: { children: ReactNode }) {
 
           <GlobalAddButton />
           <ThemeToggle />
-          <Button className="md:hidden" size="icon" variant="ghost" aria-label="Open menu">
-            <Menu className="size-5" />
-          </Button>
+          <MobileMenu />
         </div>
       </header>
       <main className="mx-auto max-w-7xl px-4 pb-28 pt-4 md:pb-10 md:pt-6">{children}</main>

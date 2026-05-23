@@ -80,8 +80,8 @@ export function ClientForm({ client, isPending, onCancel, onSubmit }: ClientForm
   const values = watch();
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-      <div className="grid gap-4 sm:grid-cols-2">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 pb-6">
+      <div className="grid grid-cols-2 gap-3 sm:gap-4">
         <Field label="Name" error={errors.full_name?.message}>
           <Input placeholder="Riya Shah" {...register("full_name")} />
         </Field>
@@ -90,7 +90,7 @@ export function ClientForm({ client, isPending, onCancel, onSubmit }: ClientForm
         </Field>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid grid-cols-2 gap-3 sm:gap-4">
         <Field label="Requirement type" error={errors.requirement_type?.message}>
           <Select
             value={values.requirement_type}
@@ -129,7 +129,7 @@ export function ClientForm({ client, isPending, onCancel, onSubmit }: ClientForm
         </Field>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-3">
+      <div className="grid grid-cols-3 gap-2 sm:gap-4">
         <Field label="BHK" error={errors.bhk?.message}>
           <Select
             value={values.bhk === null ? "none" : String(values.bhk)}
@@ -186,7 +186,7 @@ export function ClientForm({ client, isPending, onCancel, onSubmit }: ClientForm
         </Field>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid grid-cols-2 gap-3 sm:gap-4">
         <Field label="Preferred location" error={errors.preferred_location?.message}>
           <Input placeholder="Bandra West" {...register("preferred_location")} />
         </Field>
@@ -222,10 +222,10 @@ function Field({
   children: ReactNode;
 }) {
   return (
-    <div className="space-y-2">
-      <Label>{label}</Label>
+    <div className="space-y-1.5 min-w-0">
+      <Label className="text-xs sm:text-sm truncate block">{label}</Label>
       {children}
-      {error ? <p className="text-xs font-medium text-destructive">{error}</p> : null}
+      {error ? <p className="text-[10px] sm:text-xs font-medium text-destructive mt-1 leading-none">{error}</p> : null}
     </div>
   );
 }
